@@ -10,7 +10,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'  # Specifying a compatible Node.js version
+        node-version: '20'
     - name: Install NPM dependencies
       run: npm install
     - name: Build project assets
@@ -24,9 +24,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Specifying a compatible Node.js version
+          node-version: '20'
       - name: Install dependencies
         run: npm install
+      - name: Install ESLint Prettier plugin
+        run: npm install --save-dev eslint-config-prettier
       - name: Run Linting
         run: |
           echo "Running Linting Tests..."
