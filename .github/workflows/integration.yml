@@ -7,6 +7,10 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'  # Specifying a compatible Node.js version
     - name: Install NPM dependencies
       run: npm install
     - name: Build project assets
@@ -17,6 +21,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Specifying a compatible Node.js version
+      - name: Install dependencies
+        run: npm install
       - name: Run Linting
         run: |
           echo "Running Linting Tests..."
