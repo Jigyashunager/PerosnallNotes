@@ -1,4 +1,4 @@
-name: Build Next.js web application
+name: Build and Lint Check web application
 on: push
 jobs: 
   build-project:
@@ -11,3 +11,13 @@ jobs:
       run: npm install
     - name: Build project assets
       run: npm run build
+  lintTest:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Linting
+        run: |
+          echo "Running Linting Tests..."
+          npm run lint
+        env:
+          CI: true
