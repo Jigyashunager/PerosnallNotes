@@ -3,6 +3,7 @@ on: push
 jobs: 
   build-project:
     name: Build project
+    runs-on: ubuntu-latest  # Added this line to specify the runner environment
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
